@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>CSS Grid Transpose Table</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta charset="UTF-8" />
+
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+        
+    .container div {
+      border: 1px solid black;
+      font-size: 18px;
+      text-align: center;
+    }
+        
+    /* make table 'portait' instead of 'landscape' */
+    @media only screen and (max-width: 820px) {
+      .container {
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(5, 30px);
+        grid-auto-flow: column;
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <div>PRODUCT</div>
+    <div>APPLE</div>
+    <div>MANGO</div>
+    <div>ORANGE</div>
+    <div>BANANA</div>
+      
+    <div>Price</div>
+    <div>$50</div>
+    <div>$25</div>
+    <div>$30</div>
+    <div>$15</div>
+      
+    <div>Quantity</div>
+    <div>1</div>
+    <div>11</div>
+    <div>8</div>
+    <div>20</div>
+  </div>
+
+</body>
+</html>
